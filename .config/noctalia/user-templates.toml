@@ -1,0 +1,20 @@
+[config]
+
+[templates]
+
+# User-defined templates
+# Add your custom templates below
+# Example:
+# [templates.myapp]
+# input_path = "~/.config/noctalia/templates/myapp.css"
+# output_path = "~/.config/myapp/theme.css"
+# post_hook = "myapp --reload-theme"
+
+[templates.hyprland]
+input_path = "~/.config/noctalia/templates/hyprland-colors.conf"
+output_path = "~/.config/hypr/looks/colors.conf"
+post_hook = "hyprctl reload"
+
+[templates.starship]
+input_path = "~/.config/noctalia/templates/starship-colors.toml"
+output_path = "~/.config/starship.toml"
