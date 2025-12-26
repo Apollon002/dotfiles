@@ -17,7 +17,7 @@
         "externalMixer": "pwvucontrol || pavucontrol",
         "mprisBlacklist": [
         ],
-        "preferredPlayer": "",
+        "preferredPlayer": "mpv",
         "visualizerQuality": "high",
         "visualizerType": "linear",
         "volumeOverdrive": false,
@@ -32,11 +32,12 @@
         "marginHorizontal": 1,
         "marginVertical": 0.37,
         "monitors": [
-            "DP-3"
+            "DP-3",
+            "DP-4"
         ],
         "outerCorners": true,
         "position": "top",
-        "showCapsule": true,
+        "showCapsule": false,
         "widgets": {
             "center": [
                 {
@@ -54,7 +55,7 @@
                     "followFocusedScreen": false,
                     "hideUnoccupied": false,
                     "id": "Workspace",
-                    "labelMode": "index"
+                    "labelMode": "name"
                 }
             ],
             "right": [
@@ -147,8 +148,8 @@
         "generateTemplatesForPredefined": true,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "matugenSchemeType": "scheme-content",
-        "predefinedScheme": "Ayu",
+        "matugenSchemeType": "scheme-tonal-spot",
+        "predefinedScheme": "Catppuccin",
         "schedulingMode": "off",
         "useWallpaperColors": true
     },
@@ -380,7 +381,7 @@
         "niri": false,
         "pywalfox": true,
         "qt": true,
-        "spicetify": false,
+        "spicetify": true,
         "telegram": false,
         "vicinae": false,
         "walker": false,
@@ -413,7 +414,7 @@
         "setWallpaperOnAllMonitors": true,
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
-        "transitionType": "wipe",
+        "transitionType": "fade",
         "useWallhaven": false,
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",

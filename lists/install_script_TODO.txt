@@ -25,7 +25,6 @@ libva-nvidia-driver 0.0.14-1
 linux-firmware 20251125-2
 linux-zen 6.17.9.zen1-1
 linux-zen-headers 6.17.9.zen1-1
-ly 1.2.0-2
 networkmanager 1.54.2-1
 nvidia-dkms 580.105.08-5
 pipewire 1:1.4.9-2
@@ -47,10 +46,12 @@ xdg-utils 1.2.1-1
 xorg-server 21.1.21-1
 xorg-xinit 1.4.4-1
 zram-generator 1.2.1-1
+adw-gtk-theme
+nwg-look
+qt6ct
 
 
-
-Install paru
+Install paru (or yay)
 make ~/Pictures/Wallpapers folder
 
 
@@ -63,7 +64,6 @@ brave-bin
 yazi
 7zip
 fish
-python-pywalfox
 neovim
 unzip
 nodejs
@@ -74,6 +74,14 @@ cmatrix
 feh
 zathura
 zathura-pdf-mupdf
+mpv
+
+for vim specifically
+imagemagick
+ripgrep
+fd
+npm install @mermaid-js/mermaid-cli # ÜBER NPM
+
 
 # Noctalia Shell dependencies
 
@@ -84,9 +92,27 @@ polkit-kde-agent
 
 mkdir -p ~/.config/quickshell/noctalia-shell && curl -sL https://github.com/noctalia-dev/noctalia-shell/releases/latest/download/noctalia-latest.tar.gz | tar -xz --strip-components=1 -C ~/.config/quickshell/noctalia-shell
 
-# chsh -s /usr/bin/fish
+chsh -s /usr/bin/fish
+
+xdg-mime default org.pwmt.zathura.desktop application/pdf
+
+xdg-mime default feh.desktop image/jpeg
+xdg-mime default feh.desktop image/png
+xdg-mime default feh.desktop image/webp
+xdg-mime default feh.desktop image/gif
 
 ### optional ###
 texlive
 texlive-langgerman
 biber
+lazygit
+btop
+onlyoffice-bin
+cups
+
+spotify-launcher
+
+
+
+# systemd hinzufügen:
+cups.service
