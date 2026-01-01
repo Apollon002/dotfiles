@@ -6,8 +6,9 @@ to automatically configure a system using them.
 📥 Installation
 
 1️⃣ Clone the repository as a bare repo
+```bash
 git clone --bare https://github.com/Apollon002/dotfiles.git "$HOME/.dotfiles"
-
+```
 
 If you want to use a dotfiles alias:
 
