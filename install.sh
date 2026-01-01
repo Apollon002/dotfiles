@@ -124,6 +124,7 @@ CORE_PKGS=(
         greetd-tuigreet
         uwsm
         gnome-keyring
+        jq
         # needed for nvim
         imagemagick
         ripgrep
@@ -294,7 +295,7 @@ tmpfile="$(mktemp)"
 
 # set monitors
 jq --argjson mons "$monitors_json" '
-  .bar.monitors          = $mons
+  .bar.monitors          = $monswget or curl
 | .dock.monitors         = $mons
 | .notifications.monitors = $mons
 | .osd.monitors          = $mons
