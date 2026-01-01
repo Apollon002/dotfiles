@@ -295,7 +295,7 @@ tmpfile="$(mktemp)"
 
 # set monitors
 jq --argjson mons "$monitors_json" '
-  .bar.monitors          = $monswget or curl
+  .bar.monitors          = $mons
 | .dock.monitors         = $mons
 | .notifications.monitors = $mons
 | .osd.monitors          = $mons
