@@ -247,6 +247,7 @@ if [ -n "$INSTALL_BROWSER" ]; then
 fi
 
 OPTIONAL_PKGS=(
+        bitwarden
         man-db
         tldr
         texlive
@@ -259,6 +260,8 @@ OPTIONAL_PKGS=(
         spotify-launcher
         wget
         thunderbird
+        visual-studio-code-bin
+        vscodium
 )
 
 SELECTED_OPTIONALS=($(printf "%s\n" "${OPTIONAL_PKGS[@]}" | fzf --multi --prompt="Select optional packages > "))
