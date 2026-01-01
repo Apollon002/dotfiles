@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 cd $HOME
-
+git clone --bare https://github.com/Apollon002/dotfiles.git "$HOME/.dotfiles"
 dot() {
         /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME "$@"
 }
@@ -170,6 +170,7 @@ printf "${GREEN}creating wallpaper directory ~/Pictures/Wallpapers/${BLUE}\n"
 mkdir -p ~/Pictures/Wallpapers
 
 # Install Fonts (Nerd Fonts Noto + FiraCode + Noto CJK Serif)
+printf "${BLUE}starting to install fonts...${GREEN}\n"
 (
         set -e
 
@@ -201,6 +202,7 @@ mkdir -p ~/Pictures/Wallpapers
 # Install browser
 BROWSERS=("Brave" "Chrome" "Chromium" "Firefox" "Librewolf" "Zen" "None")
 INSTALL_BROWSER=
+printf "${BLUE}Please select a browser to install${GREEN}\n"
 select browser in "${BROWSERS[@]}"; do
         case "$browser" in
         "Brave")
