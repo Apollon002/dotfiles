@@ -10,7 +10,7 @@ A working hyprland installation. Please refer to the Hyprland wiki.
 
 1️⃣ Download the install script
 ```bash
-touch install.sh && curl -fsSL https://raw.githubusercontent.com/Apollon002/dotfiles/main/install.sh > install.sh
+curl -fsSL https://raw.githubusercontent.com/Apollon002/dotfiles/main/install.sh > install.sh
 ```
 
 If you want to use a dotfiles alias:
