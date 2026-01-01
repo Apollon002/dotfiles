@@ -1,30 +1,36 @@
 Dotfiles
 
-Dieses Repository enthält meine persönlichen Dotfiles sowie ein Installationsskript,
-um ein System automatisch damit zu konfigurieren.
+This repository contains my personal dotfiles along with an installation script
+to automatically configure a system using them.
 
 📥 Installation
-
-1️⃣ Repository als Bare-Repo klonen
+1️⃣ Clone the repository as a bare repo
 git clone --bare https://github.com/Apollon002/dotfiles.git "$HOME/.dotfiles"
 
 
-Falls du einen dotfiles-Alias nutzen möchtest:
+If you want to use a dotfiles alias:
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 dotfiles checkout
 
-2️⃣ Installationsskript ausführen
+2️⃣ Run the installation script
 
-Danach das Installskript mit Root-Rechten starten:
+After cloning, run the installation script with root privileges:
 
 sudo ./install.sh
 
-Autologin für greetd aktivieren:
-Nach dem Ausführen des Skripts muss Autologin für greetd aktiviert werden, da die Passwortabfrage von Noctalia-Shell übernommen wird.
+🔐 Enable greetd Autologin
+
+After running the script, enable autologin for greetd.
+Noctalia Shell will handle authentication instead of greetd.
+
+Edit the greetd config:
 
 sudo nvim /etc/greetd/config.toml
-```bash
+
+
+Example configuration:
+```
 [terminal]
 vt = 1
 
@@ -36,9 +42,9 @@ user = "greeter"
 command = "uwsm start hyprland.desktop"
 user = "USERNAME"
 ```
-Ändere USERNAME zu deinem Username!
+Replace USERNAME with your actual system username.
 
-Hinweis
+⚠️ Notice
 
-Das Skript installiert benötigte Pakete und richtet die Umgebung automatisch ein.
-Benutzung auf eigene Verantwortung.
+The script installs required packages and sets up the environment automatically.
+Use at your own risk. If you encounter issues, review the script and configuration.
