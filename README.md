@@ -19,7 +19,7 @@ dotfiles checkout
 
 After cloning, run the installation script WITHOUT root privileges:
 
-sudo ./install.sh
+./install.sh
 
 🔐 Enable greetd Autologin
 
