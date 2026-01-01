@@ -1,5 +1,13 @@
 #!/usr/bin/bash
 
+cd $HOME
+
+dot() {
+        /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME "$@"
+}
+
+dot config --local status.showUntrackedFiles no
+
 BLACK='\033[0;30m'
 DARK_GRAY='\033[1;30m'
 
@@ -63,7 +71,7 @@ else
                 relaxedreply=${strictreply:-$REPLY}
                 case $relaxedreply in
                 Paru | paru | p)
-                        pacman -S --needed base-devel git
+                        sudo pacman -S --needed base-devel git
                         git clone https://aur.archlinux.org/paru.git
                         (
                                 cd paru || exit 1
@@ -75,7 +83,7 @@ else
                         break
                         ;;
                 Yay | yay | y)
-                        pacman -S --needed git base-devel
+                        sudo pacman -S --needed git base-devel
                         git clone https://aur.archlinux.org/yay.git
                         (
                                 cd yay || exit 1
@@ -94,6 +102,7 @@ else
 fi
 
 CORE_PKGS=(
+        curl
         yazi
         7zip
         fish
@@ -134,7 +143,7 @@ CORE_PKGS=(
         polkit-kde-agent
 )
 
-printf "${GEEN}installing core packages...${BLUE}\n"
+printf "${GREEN}installing core packages...${BLUE}\n"
 sleep 2
 # Install core packages
 "${HELPER}" -S --needed --noconfirm "${CORE_PKGS[@]}"
@@ -158,7 +167,7 @@ xdg-mime default feh.desktop image/gif
 
 # create wallpaper directory
 printf "${GREEN}creating wallpaper directory ~/Pictures/Wallpapers/${BLUE}\n"
-mkdir ~/Pictures/Wallpapers
+mkdir -p ~/Pictures/Wallpapers
 
 # Install Fonts (Nerd Fonts Noto + FiraCode + Noto CJK Serif)
 (
@@ -234,7 +243,6 @@ if [ -n "$INSTALL_BROWSER" ]; then
 fi
 
 OPTIONAL_PKGS=(
-        browser
         man-db
         tldr
         texlive
@@ -257,6 +265,8 @@ else
         echo "no optional packages selected"
 fi
 
-if pacman -Q cups >/dev/null 2>&1; then
+if "${HELPER}" -Q cups >/dev/null 2>&1; then
         sudo systemctl enable cups.service
 fi
+
+dot checkout
