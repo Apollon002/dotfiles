@@ -272,3 +272,7 @@ if "${HELPER}" -Q cups >/dev/null 2>&1; then
 fi
 
 dot checkout
+
+echo "# Put the programs you want to autostart in this file" >~/.config/hypr/core/autostart_local.conf
+echo "# Put your monitor settings in this file" >~/.config/hypr/extra/monitors/local.conf
+echo "# Put your window rules in this file" >~/.config/hypr/extra/wrules/user.conf
