@@ -108,6 +108,12 @@ CORE_PKGS=(
         zathura
         zathura-pdf-mupdf
         mpv
+        starship
+        adw-gtk-theme
+        nwg-look
+        greetd
+        greetd-tuigreet
+        uwsm
         # needed for nvim
         imagemagick
         ripgrep
@@ -153,6 +159,35 @@ xdg-mime default feh.desktop image/gif
 # create wallpaper directory
 printf "${GREEN}creating wallpaper directory ~/Pictures/Wallpapers/${BLUE}\n"
 mkdir ~/Pictures/Wallpapers
+
+# Install Fonts (Nerd Fonts Noto + FiraCode + Noto CJK Serif)
+(
+        set -e
+
+        FONT_DIR="$HOME/.local/share/fonts"
+        TMP_DIR="$(mktemp -d)"
+
+        mkdir -p "$FONT_DIR/Noto"
+
+        cd "$TMP_DIR"
+
+        echo "Downloading fonts…"
+        curl -L -o Noto.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Noto.zip
+        curl -L -o FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.zip
+        curl -L -o NotoSerifCJK.ttc https://github.com/googlefonts/noto-cjk/raw/main/Serif/Variable/OTC/NotoSerifCJK-VF.otf.ttc
+
+        echo "Extracting fonts…"
+        unzip -o Noto.zip -d "$FONT_DIR"
+        unzip -o FiraCode.zip -d "$FONT_DIR"
+
+        echo "Installing Noto CJK Serif…"
+        mv NotoSerifCJK.ttc "$FONT_DIR/Noto/"
+
+        echo "Refreshing font cache…"
+        fc-cache -fv
+
+        echo "Fonts installed successfully."
+)
 
 # Install browser
 BROWSERS=("Brave" "Chrome" "Chromium" "Firefox" "Librewolf" "Zen" "None")
