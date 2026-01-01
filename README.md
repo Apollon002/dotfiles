@@ -22,6 +22,7 @@ sudo ./install.sh
 
 Autologin für greetd aktivieren:
 Nach dem Ausführen des Skripts muss Autologin für greetd aktiviert werden, da die Passwortabfrage von Noctalia-Shell übernommen wird.
+
 sudo nvim /etc/greetd/config.toml
 ```bash
 [terminal]
@@ -43,8 +44,10 @@ user = "greeter"
 
 [initial_session]
 command = "uwsm start hyprland.desktop"
-user = "jannik"
+user = "USERNAME"
 ```
+Ändere USERNAME zu deinem Username!
+
 Hinweis
 
 Das Skript installiert benötigte Pakete und richtet die Umgebung automatisch ein.
