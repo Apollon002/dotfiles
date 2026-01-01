@@ -1,13 +1,5 @@
 #!/usr/bin/bash
 
-cd $HOME
-git clone --bare https://github.com/Apollon002/dotfiles.git "$HOME/.dotfiles"
-dot() {
-        /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME "$@"
-}
-
-dot config --local status.showUntrackedFiles no
-
 BLACK='\033[0;30m'
 DARK_GRAY='\033[1;30m'
 
@@ -52,6 +44,14 @@ select strictreply in "Yes" "No"; do
         *) exit ;;
         esac
 done
+
+cd $HOME
+git clone --bare https://github.com/Apollon002/dotfiles.git "$HOME/.dotfiles"
+dot() {
+        /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME "$@"
+}
+
+dot config --local status.showUntrackedFiles no
 
 # Variable that contains used AUR helper
 HELPER=
@@ -123,6 +123,7 @@ CORE_PKGS=(
         greetd
         greetd-tuigreet
         uwsm
+        gnome-keyring
         # needed for nvim
         imagemagick
         ripgrep
@@ -271,8 +272,30 @@ if "${HELPER}" -Q cups >/dev/null 2>&1; then
         sudo systemctl enable cups.service
 fi
 
-dot checkout
+dot checkout -f
 
 echo "# Put the programs you want to autostart in this file" >~/.config/hypr/core/autostart_local.conf
 echo "# Put your monitor settings in this file" >~/.config/hypr/extra/monitors/local.conf
 echo "# Put your window rules in this file" >~/.config/hypr/extra/wrules/user.conf
+
+# set bars for noctalia shell
+CONFIG="$HOME/.config/noctalia/settings.json"
+
+if [ ! -f "$CONFIG" ]; then
+        echo "Settings not found: $CONFIG" >&2
+        exit 1
+fi
+
+# get monitor names
+monitors_json=$(hyprctl monitors -j | jq '[.[].name]')
+
+# temp file
+tmpfile="$(mktemp)"
+
+# set monitors
+jq --argjson mons "$monitors_json" '
+  .bar.monitors          = $mons
+| .dock.monitors         = $mons
+| .notifications.monitors = $mons
+| .osd.monitors          = $mons
+' "$CONFIG" >"$tmpfile" && mv "$tmpfile" "$CONFIG"
