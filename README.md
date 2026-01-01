@@ -3,6 +3,9 @@ Dotfiles
 This repository contains my personal dotfiles along with an installation script
 to automatically configure a system using them.
 
+Dependencies:
+A working hyprland installation. Please refer to the Hyprland wiki.
+
 📥 Installation
 
 1️⃣ Clone the repository as a bare repo
