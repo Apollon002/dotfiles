@@ -257,6 +257,8 @@ OPTIONAL_PKGS=(
         onlyoffice-bin
         cups
         spotify-launcher
+        wget
+        thunderbird
 )
 
 SELECTED_OPTIONALS=($(printf "%s\n" "${OPTIONAL_PKGS[@]}" | fzf --multi --prompt="Select optional packages > "))
