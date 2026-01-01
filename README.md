@@ -8,9 +8,9 @@ A working hyprland installation. Please refer to the Hyprland wiki.
 
 📥 Installation
 
-1️⃣ Clone the repository as a bare repo
+1️⃣ Download the install script
 ```bash
-git clone --bare https://github.com/Apollon002/dotfiles.git "$HOME/.dotfiles"
+
 ```
 
 If you want to use a dotfiles alias:
