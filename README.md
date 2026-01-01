@@ -4,6 +4,7 @@ Dieses Repository enthält meine persönlichen Dotfiles sowie ein Installationss
 um ein System automatisch damit zu konfigurieren.
 
 📥 Installation
+
 1️⃣ Repository als Bare-Repo klonen
 git clone --bare https://github.com/Apollon002/dotfiles.git "$HOME/.dotfiles"
 
