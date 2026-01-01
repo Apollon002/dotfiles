@@ -17,7 +17,7 @@ dotfiles checkout
 
 2️⃣ Run the installation script
 
-After cloning, run the installation script with root privileges:
+After cloning, run the installation script WITHOUT root privileges:
 
 sudo ./install.sh
 
