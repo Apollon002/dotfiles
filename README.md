@@ -4,7 +4,11 @@ This repository contains my personal dotfiles along with an installation script
 to automatically configure a system using them.
 
 Dependencies:
-A working hyprland installation. Please refer to the Hyprland wiki.
+A working hyprland installation as well as curl and git.
+```bash
+sudo pacman -S curl
+sudo pacman -S git
+```
 
 📥 Installation
 
