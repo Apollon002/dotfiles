@@ -271,6 +271,7 @@ else
         echo "no optional packages selected"
 fi
 
+sudo systemctl enable greetd.service
 if "${HELPER}" -Q cups >/dev/null 2>&1; then
         sudo systemctl enable cups.service
 fi
