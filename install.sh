@@ -190,8 +190,8 @@ printf "${GREEN}starting to install fonts...${NC}\n"
         curl -L -o NotoSerifCJK.ttc https://github.com/googlefonts/noto-cjk/raw/main/Serif/Variable/OTC/NotoSerifCJK-VF.otf.ttc
 
         echo "Extracting fonts…"
-        unzip -o Noto.zip -d "$FONT_DIR"
-        unzip -o FiraCode.zip -d "$FONT_DIR"
+        unzip -o Noto.zip -d "$FONT_DIR/Noto"
+        unzip -o FiraCode.zip -d "$FONT_DIR/FiraCodeNerd"
 
         echo "Installing Noto CJK Serif…"
         mv NotoSerifCJK.ttc "$FONT_DIR/Noto/"
