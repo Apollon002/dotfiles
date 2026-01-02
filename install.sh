@@ -188,6 +188,7 @@ printf "${GREEN}starting to install fonts...${NC}\n"
         curl -L -o Noto.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Noto.zip
         curl -L -o FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.zip
         curl -L -o NotoSerifCJK.ttc https://github.com/googlefonts/noto-cjk/raw/main/Serif/Variable/OTC/NotoSerifCJK-VF.otf.ttc
+        curl -L -o NotoColorEmoji.ttf https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf
 
         echo "Extracting fonts…"
         unzip -o Noto.zip -d "$FONT_DIR/Noto"
@@ -195,6 +196,9 @@ printf "${GREEN}starting to install fonts...${NC}\n"
 
         echo "Installing Noto CJK Serif…"
         mv NotoSerifCJK.ttc "$FONT_DIR/Noto/"
+
+        echo "Installing Noto Emoji"
+        mv NotoColorEmoji.ttf "$FONT_DIR/Noto"
 
         echo "Refreshing font cache…"
         fc-cache -fv
