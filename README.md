@@ -11,9 +11,9 @@ sudo pacman -S curl git
 
 📥 Installation
 
-1️⃣ Download the install script
+1️⃣ Run the install script
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Apollon002/dotfiles/main/install.sh > install.sh
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Apollon002/dotfiles/main/install.sh)"
 ```
 
 If you want to use a dotfiles alias:
