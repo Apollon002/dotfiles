@@ -21,13 +21,7 @@ If you want to use a dotfiles alias:
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 dotfiles checkout
 
-2️⃣ Run the installation script
-
-After cloning, run the installation script WITHOUT root privileges:
-
-./install.sh
-
-🔐 Enable greetd Autologin
+2️⃣ Enable greetd autologin
 
 After running the script, enable autologin for greetd.
 Noctalia Shell will handle authentication instead of greetd.
