@@ -16,11 +16,6 @@ sudo pacman -S curl git
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Apollon002/dotfiles/main/install.sh)"
 ```
 
-If you want to use a dotfiles alias:
-
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-dotfiles checkout
-
 2️⃣ Enable greetd autologin
 
 After running the script, enable autologin for greetd.
