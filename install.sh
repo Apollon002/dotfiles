@@ -126,6 +126,7 @@ CORE_PKGS=(
         uwsm
         gnome-keyring
         jq
+        hyprshot
         # needed for nvim
         imagemagick
         ripgrep
